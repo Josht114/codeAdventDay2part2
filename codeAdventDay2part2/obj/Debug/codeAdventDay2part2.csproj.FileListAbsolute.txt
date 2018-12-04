@@ -1,1 +1,6 @@
 c:\users\josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\bin\Debug\codeAdventDay2part2.exe.config
+C:\Users\Josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\bin\Debug\codeAdventDay2part2.exe
+C:\Users\Josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\bin\Debug\codeAdventDay2part2.pdb
+C:\Users\Josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\obj\Debug\codeAdventDay2part2.csprojResolveAssemblyReference.cache
+C:\Users\Josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\obj\Debug\codeAdventDay2part2.exe
+C:\Users\Josh\documents\visual studio 2015\Projects\codeAdventDay2part2\codeAdventDay2part2\obj\Debug\codeAdventDay2part2.pdb

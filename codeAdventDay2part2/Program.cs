@@ -9,13 +9,21 @@ namespace codeAdventDay2part2
 {
     class Program
     {
+       static string diffLetter = "";
+        static int diffPosition = 0;
+
         static void Main(string[] args)
         {
+
+
             List<String> listOfBoxIds = new List<String>();
             int count = 0;
 
-            string finalBoxOne = "";
-            string finalBoxTwo = "";
+            string finalBoxOne = "not found";
+            string finalBoxTwo = "not found";
+
+
+
 
             while (true) // Loop indefinitely
             {
@@ -32,6 +40,7 @@ namespace codeAdventDay2part2
 
                 if (input == "lobs")
                 {
+                    listOfBoxIds.Remove("lobs");
 
                     foreach (string box in listOfBoxIds)
                     {
@@ -53,9 +62,10 @@ namespace codeAdventDay2part2
                     }
                     string same = findSame(finalBoxOne, finalBoxTwo);
 
-                    Console.Write("box 1 " + finalBoxOne + Environment.NewLine);
-                    Console.Write("box 2 " + finalBoxTwo + Environment.NewLine);
+                    Console.Write("box first " + finalBoxOne + Environment.NewLine);
+                    Console.Write("box second " + finalBoxTwo + Environment.NewLine);
                     Console.Write("same letters " + same + Environment.NewLine);
+                    Console.Write("letter " + diffLetter + Environment.NewLine);
 
                 }
 
@@ -64,17 +74,63 @@ namespace codeAdventDay2part2
         }
         public static bool getCloseMatch(Array boxOneChars, Array boxTwoChars)
         {
+            int length = boxOneChars.Length;
+            int i = 0;
+            bool singleDiffAlreadyFound = false;
 
+            while (i < length)
+            {
+                bool isMatch = boxOneChars.GetValue(i).Equals(boxTwoChars.GetValue(i));
 
+                if (!isMatch)
+                {
+                    if (singleDiffAlreadyFound)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        singleDiffAlreadyFound = true;
+                    }
+                }
+                i++;
+            }
 
-            return false;
+            return singleDiffAlreadyFound;
         }
 
 
 
         public static string findSame(string one, string two)
         {
+            List<char> charListOne = new List<char>();
+            charListOne.AddRange(one);
+            List<char> charListTwo = new List<char>();
+            charListTwo.AddRange(two);
 
+
+            int i = 0;
+
+
+            while (i < charListOne.Count)
+            {
+                if (!charListOne.ElementAt(i).Equals(charListTwo.ElementAt(i)))
+                {
+                     charListOne.RemoveAt(i);
+
+                    string same = "";
+
+
+                    foreach (char c in charListOne)
+                    {
+                        same = same + c;
+                    }
+
+
+                    return same;
+                }
+                i++;
+            }
             return "";
         }
 
